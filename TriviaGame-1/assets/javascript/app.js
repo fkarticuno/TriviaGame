@@ -1,5 +1,4 @@
 
-
 var questions = [
     "Who let the dogs out?",
     "Whats for dinner?",
@@ -15,24 +14,26 @@ var answers = [
     ["42","Eat, Sh*t and Die","Glory To The Highest","Subversion Of Death"],
     ["Rayleigh Scattering", "Wizard Magic", "Blue Sunlight", "Colorblindness"],
     ["Arbys","Burger King","WackArnolds","The Mighty Ducks"]
-
 ];
-var qrow = 0;
-var qrowchild = 0;
-var buildRadio = 0;
 
-var randint = Math.floor((Math.random() * 100) + 1);
-//  randomizes answer order
+//  initialize question row which will hold questions
+var qrow = 0;
+//  initialize child of question row which will hold answeres
+var qrowchild = 0;
+//  initialize variable to = <input type='radio'.../> to wrap answers in radio groups
+var buildRadio = 0;
+//  initialize random integer to randomizes answer order with rando()
+var randint = 0;
+
+//  potentially randomizes output to mix up answers each time quiz is run
+//  may extend to randomize questions as well
 function rando() {
     return Math.floor((Math.random() * 100) + 1);
 }
 
-
-//<option value='arbys'>arbys</option>
-
-
 //   Builds question/answer body field
 function buildMain() {
+    //  iterates to create and build one div.row with a div.answers-iterative child
     for (var i = 0; i < questions.length; i++) {
         qrow = $("<div>");
         qrow.addClass("row" + "question" + i);
@@ -40,7 +41,7 @@ function buildMain() {
         qrowchild = $("<div>");
         qrowchild.addClass("answers" + i);
 
-        
+        //  iterates to create and build in-line spans of <input type='radio'.../> with answers
         for (j=0; j<answers[i].length; j++) {
             //  normal typed with           "string"+var+"string"
             //buildRadio = "<input type='radio' value="+j+" name='opt"+i+"'>" + answers[i][j] + "</input>"
@@ -49,11 +50,22 @@ function buildMain() {
             buildRadio = `<span><input type='radio' value=${j} name='opt${i}'>${answers[i][j]}</input></span>`
             qrowchild.html(`${qrowchild.html()}Q:${i}A:${j} ${buildRadio}`);
         }
+        //  appends question row with children to #bodyactual 
         $("#bodyactual").append(qrow).append(qrowchild);
+        
+        //  =====================================================================
+        //  dead call used to wrap answers in <input type='radio'.../> 
+        //  however it returned [objects] instead of [strings] and did not
+        //  work with qrowchild.html(qrowchild.html()+buildOpt(answers[i][j]))
+        //  expected output = <div...><input...>'arbys'</input></div>
+        //  actual output = <div...>[object][object]</div>
         //buildOpt(answers[i]);
+        //  =====================================================================
     };
 };
-//  Does the thing
+
+
+//  calls build main to fill #bodyactual with iterated content
 buildMain();
 
 
