@@ -3,8 +3,17 @@ div {
 }
 .sidebar {
     background-image: url('https://tinyurl.com/y22hh3o4');
-    
+    background-size: cover;
 }
 #bodyactual {
     border:2px solid blue;
+}
+span:hover {
+    background-color: green;
+    border-radius: 25px;
+    font-size: 1.1em;
+}
+body {
+    font-size: 2em;
+    background-color: gold;
 }
