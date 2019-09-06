@@ -47,7 +47,7 @@ function buildMain() {
             //buildRadio = "<input type='radio' value="+j+" name='opt"+i+"'>" + answers[i][j] + "</input>"
             //   https://campushippo.com/lessons/how-to-do-string-interpolation-with-javascript-7854ef9d
             //   string interpolated with   `text ${variable}`
-            buildRadio = `<span><input type='radio' value=${j} name='opt${i}'>${answers[i][j]}</input></span>`
+            buildRadio = `<span><input type='radio' value=${j} name='opt${i}' id=${answers[i][j]} >${answers[i][j]}</input></span>`
             qrowchild.html(`${qrowchild.html()}Q:${i}A:${j} ${buildRadio}`);
         }
         //  appends question row with children to #bodyactual 
@@ -63,6 +63,19 @@ function buildMain() {
         //  =====================================================================
     };
 };
+
+
+ $( document ).ready(function() {
+    console.log( "ready!" );
+        //  This did not work, how do I find out if a button is selected or not?
+        // Used as reference https://www.w3schools.com/jsref/prop_radio_checked.asp
+    if ($('#Beef').attr('checked') == true) {
+        console.log("its checked")
+    }
+    if ($('#Beef').attr('checked') == false) {
+            console.log("its not checked")
+    };
+});
 
 
 //  calls build main to fill #bodyactual with iterated content

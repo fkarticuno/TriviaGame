@@ -1,0 +1,11 @@
+$( document ).ready(function() {
+    console.log( "ready!" );
+        //  This did not work, how do I find out if a button is selected or not?
+        // Used as reference https://www.w3schools.com/jsref/prop_radio_checked.asp
+    if ($('#Beef').attr('checked') == true) {
+        console.log("its checked")
+    }
+    if ($('#Beef').attr('checked') == false) {
+            console.log("its not checked")
+    };
+});
