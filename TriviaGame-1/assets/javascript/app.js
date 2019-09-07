@@ -65,11 +65,18 @@ function buildMain() {
 };
 
 
- $( document ).ready(function() {
+ $(document).ready(function() {
     console.log( "ready!" );
         //  This did not work, how do I find out if a button is selected or not?
         // Used as reference https://www.w3schools.com/jsref/prop_radio_checked.asp
-    if ($('#Beef').attr('checked') == true) {
+    
+
+        //  add 3rd value in array for Right v Wrong
+    if ($('input[name='+opt0+']:checked').val()) {
+        console.log('works')
+    }
+    //$('input[name=name_of_your_radiobutton]:checked').val();
+    if ($('#Beef').attr('checked:true')==true) {
         console.log("its checked")
     }
     if ($('#Beef').attr('checked') == false) {
