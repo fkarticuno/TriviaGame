@@ -1,0 +1,52 @@
+input {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+p {
+    font-size: 25px;
+    color:rgba(46, 36, 36, 0.966)
+}
+img {
+    height: 200px;
+    width: 200px;
+}
+.q1,.q2,.q3,.q4,.q5 {
+    padding: 10px;
+}
+.header,.footer {
+    height: 50px;
+    width: 100%;
+    background-color: grey;
+}
+.main {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: lightgray;
+}
+.leftsidebar {
+    float: left;
+    width: 50px;
+    background-color: grey;
+    height: 500px;
+}
+.rightsidebar {
+    float: right;
+    width: 50px;
+    background-color: grey;
+    height: 500px;
+}
+.gifs {
+    float: left;
+    width: 200px;
+    height: 500px;
+}
+.blank {
+    float: right;
+    width: 200px;
+    height: 500px;
+}
+.gameover {
+    height: 150px;
+    width: 190px;
+}
