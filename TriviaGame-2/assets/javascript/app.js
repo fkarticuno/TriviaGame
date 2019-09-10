@@ -47,7 +47,7 @@ function callGiphy() {
     
     $.ajax({
     url: queryURL,
-    method: "GET"
+    method: "GET"   
     }).then(function(response) {
     console.log(response);
     console.log(response.data[0].embed_url);

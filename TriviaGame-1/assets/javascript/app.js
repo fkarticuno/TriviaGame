@@ -47,7 +47,7 @@ function buildMain() {
             //buildRadio = "<input type='radio' value="+j+" name='opt"+i+"'>" + answers[i][j] + "</input>"
             //   https://campushippo.com/lessons/how-to-do-string-interpolation-with-javascript-7854ef9d
             //   string interpolated with   `text ${variable}`
-            buildRadio = `<span><input type='radio' value=${j} name='opt${i}' id=${answers[i][j]} >${answers[i][j]}</input></span>`
+            buildRadio = `<span><input type='radio' class='answ' value=${j} name='opt${i}' id=${answers[i][j]} >${answers[i][j]}</input></span>`
             qrowchild.html(`${qrowchild.html()}Q:${i}A:${j} ${buildRadio}`);
         }
         //  appends question row with children to #bodyactual 
@@ -72,18 +72,21 @@ function buildMain() {
     
 
         //  add 3rd value in array for Right v Wrong
-    if ($('input[name='+opt0+']:checked').val()) {
-        console.log('works')
-    }
+    //if ($('input[name='+opt0+']:checked').val()) {
+      //  console.log('works')
+    //}
     //$('input[name=name_of_your_radiobutton]:checked').val();
-    if ($('#Beef').attr('checked:true')==true) {
-        console.log("its checked")
-    }
-    if ($('#Beef').attr('checked') == false) {
-            console.log("its not checked")
-    };
+    
 });
 
+$('.answ').on('click',function() {
+    if ($(this).attr('checked') == true) {
+        console.log($(this).attr('class') +  "is checked")
+    }
+    if ($(this).attr('checked') == false) {
+            console.log($(this).attr('class') + " its not checked")
+    };
+});
 
 //  calls build main to fill #bodyactual with iterated content
 buildMain();
