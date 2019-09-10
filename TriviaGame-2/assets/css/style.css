@@ -45,6 +45,8 @@ img {
     float: right;
     width: 200px;
     height: 500px;
+    margin-right: 40px;
+    text-align: center;
 }
 .gameover {
     height: 150px;

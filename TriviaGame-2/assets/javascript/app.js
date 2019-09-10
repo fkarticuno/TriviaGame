@@ -18,10 +18,15 @@ updateScore();
     });
 */
 $('.finishbttn').on('click',function(){
+    done();
+})
+function done() {
     $('.blank').empty();
+    $('.blank').append('<p>With ' + timeConverter(count) + ' remaining!</p>')
+    clearInterval(intervalId);
     var end = '<hr><p>You got ' + score + ' out of 5 questions right!</p><img class="gameover" src="https://media.giphy.com/media/fxnF2NswlLlxvwGYEn/giphy.gif"/>'
     $('.blank').append(end);
-})
+}
 // Updates score when opiton button clicked
 // Should hold total score and change based on how many class='correct' are selected
 function updateScore() {
@@ -50,3 +55,33 @@ function callGiphy() {
     $('.gifs').html('<img src='+ima+'/>');
     });
 }
+
+// Timer to stop game at 0
+var count = 120;
+var intervalId = setInterval(timeUpdate, 1000)
+function timeUpdate() {
+    (count<=0 ? endGame() : count--);
+    m = $('.timer').text(timeConverter(count));
+    return m;
+}
+
+function endGame() {
+    clearInterval(intervalId);
+    done();
+}
+
+function timeConverter(t) {
+    //  Takes the current time in seconds and convert it to minutes and seconds (mm:ss).
+    var minutes = Math.floor(t / 60);
+    var seconds = t - (minutes * 60);
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+    if (minutes === 0) {
+      minutes = "00";
+    }
+    else if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+    return minutes + ":" + seconds;
+  }
