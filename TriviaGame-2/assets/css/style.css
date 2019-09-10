@@ -1,3 +1,9 @@
+body,html {
+    background-color: lightblue;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
 input {
     margin-right: 20px;
     margin-left: 20px;
@@ -9,6 +15,7 @@ p {
 img {
     height: 200px;
     width: 200px;
+    border-radius: 0% 25% 0% 25%;
 }
 .q1,.q2,.q3,.q4,.q5 {
     padding: 10px;
@@ -20,35 +27,53 @@ img {
 }
 .main {
     width: 100%;
-    height: 100%;
+    height: 90%;
     text-align: center;
     background-color: lightgray;
+    border-radius: 0% 25% 0% 25%;
 }
 .leftsidebar {
     float: left;
     width: 50px;
     background-color: grey;
-    height: 500px;
+    height: 90%;
 }
 .rightsidebar {
     float: right;
     width: 50px;
     background-color: grey;
-    height: 500px;
+    height: 90%;
 }
 .gifs {
     float: left;
     width: 200px;
-    height: 500px;
+    height: 90%;
+    padding-top: 150px;
+    margin-left: 40px;
 }
 .blank {
     float: right;
     width: 200px;
-    height: 500px;
+    height: 90%;
     margin-right: 40px;
     text-align: center;
+}
+.timebar {
+    height: 15px;
+    width: 100%;
+    border: 3px solid lightblue;
+    background-color: blue;
+    display: inline-block; 
+}
+.finishbttn {
+    border-radius: 25%;
+    font-size: 25px;
 }
 .gameover {
     height: 150px;
     width: 190px;
+}
+.container {
+    height: 100%;
+    width: 100%;
 }

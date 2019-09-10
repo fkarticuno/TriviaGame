@@ -9,75 +9,81 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <div class="header">&nbsp;</div>
-    <div class="leftsidebar">&nbsp;</div>
-    <div class="gifs">&nbsp;</div>
-    <div class="rightsidebar">&nbsp;</div>
-    <div class="blank">
-        &nbsp;
-        <h3>
-            Answer the questions within <div class="timer">02:00</div> then click:
-        </h3>
-        <input type="submit" class='finishbttn'></input>
+    <div class="container">
+        <div class="header">&nbsp;</div>
+        <div class="leftsidebar">&nbsp;</div>
+        <div class="gifs">&nbsp;</div>
+        <div class="rightsidebar">&nbsp;</div>
+        <div class="blank">
+            &nbsp;
+            <h3>
+                Answer The Questions Within 
+                <div class="timer">02:00</div>
+                <div class='timebar'></div>
+                Then Click:
+            </h3>
+            <input type="submit" class='finishbttn'></input>
+            
+        </div>
+        <div class="main" id="cont">
+            <div class="q1" id="row1">
+                <div class="question1">
+                <p>1. Which of these has the least amount of toes?</p>
+                </div>
+                <span>
+                    <input class='rad' type='radio' name='q1row1' id='lions'>Lions</input>
+                    <input class='correct' type='radio' name='q1row1' id='tiger'>Tigers</input>
+                    <input class='rad' type='radio' name='q1row1' id='bear'>Bears</input>
+                    <input class='rad' type='radio' name='q1row1' id='oh my'>Oh My</input>
+                </span>
+            </div>
+            <div class="q2" id="row2">
+                <div class="question2">
+                    <p>2. Which of these is a berry?</p>
+                </div>
+                <span>
+                    <input class='rad' type='radio' name='q2row2' id='strawberries'>Strawberry</input>
+                    <input class='correct' type='radio' name='q2row2' id='banana-getting-ready'>Banana</input>
+                    <input class='rad' type='radio' name='q2row2' id='blackberries'>Blackberry</input>
+                    <input class='rad' type='radio' name='q2row2' id='ampersand'>Ampersand</input>
+                </span>  
+            </div>
+            <div class="q3" id="row3">
+                <div class="question3">
+                    <p>3. Which of these is the name of a Russian Jet?</p>
+                </div>
+                <span>
+                    <input class='correct' type='radio' name='q3row3' id='mig29-climb'>Fulcrum</input>
+                    <input class='rad' type='radio' name='q3row3' id='starfighter'>Starfighter</input>
+                    <input class='rad' type='radio' name='q3row3' id='shenyang-jet'>J31</input>
+                    <input class='rad' type='radio' name='q3row3'id='panavia'>Tornado</input>
+                </span>
+            </div>
+            <div class="q4" id="row4">
+                <div class="question4">
+                    <p>4. Which of these numbers is the largest?</p>
+                </div>
+                <span>
+                    <input class='rad' type='radio' name='q4row4' id='millionare'>1 Million</input>
+                    <input class='correct' type='radio' name='q4row4' id='centillion'>1 Centillion</input>
+                    <input class='rad' type='radio' name='q4row4' id='zillion'>1 zillion</input>
+                    <input class='rad' type='radio' name='q4row4'id='10^300'>10^300 </input>
+                </span>
+            </div>
+            <div class="q5" id="row5">
+                <div class="question5">
+                    <p>5. Which of these shapes has the most sides?</p>
+                </div>
+                <span>
+                    <input class='rad' type='radio' name='q5row5' id='dodecahedron'>Dodecahedron</input>
+                    <input class='rad' type='radio' name='q5row5' id='rhombus'>Rhombus</input>
+                    <input class='rad' type='radio' name='q5row5' id='triangle'>triangle</input>
+                    <input class='correct' type='radio' name='q5row5' id='circle'>Circle</input>
+                </span>
+            </div>
+        </div>
+        <div class="footer"></div>
     </div>
-    <div class="main" id="cont">
-        <div class="q1" id="row1">
-            <div class="question1">
-               <p>1. Which of these has the least amount of toes?</p>
-            </div>
-            <span>
-                <input class='rad' type='radio' name='q1row1' id='lions'>Lions</input>
-                <input class='correct' type='radio' name='q1row1' id='tiger'>Tigers</input>
-                <input class='rad' type='radio' name='q1row1' id='bear'>Bears</input>
-                <input class='rad' type='radio' name='q1row1' id='oh my'>Oh My</input>
-            </span>
-        </div>
-        <div class="q2" id="row2">
-            <div class="question2">
-                <p>2. Which of these is a berry?</p>
-            </div>
-            <span>
-                <input class='rad' type='radio' name='q2row2' id='strawberries'>Strawberry</input>
-                <input class='correct' type='radio' name='q2row2' id='banana-getting-ready'>Banana</input>
-                <input class='rad' type='radio' name='q2row2' id='blackberries'>Blackberry</input>
-                <input class='rad' type='radio' name='q2row2' id='ampersand'>Ampersand</input>
-            </span>  
-        </div>
-        <div class="q3" id="row3">
-            <div class="question3">
-                <p>3. Which of these is the name of a Russian Jet?</p>
-            </div>
-            <span>
-                <input class='correct' type='radio' name='q3row3' id='mig29-climb'>Fulcrum</input>
-                <input class='rad' type='radio' name='q3row3' id='starfighter'>Starfighter</input>
-                <input class='rad' type='radio' name='q3row3' id='shenyang-jet'>J31</input>
-                <input class='rad' type='radio' name='q3row3'id='panavia'>Tornado</input>
-            </span>
-        </div>
-        <div class="q4" id="row4">
-            <div class="question4">
-                <p>4. Which of these numbers is the largest?</p>
-            </div>
-            <span>
-                <input class='rad' type='radio' name='q4row4' id='millionare'>1 Million</input>
-                <input class='correct' type='radio' name='q4row4' id='centillion'>1 Centillion</input>
-                <input class='rad' type='radio' name='q4row4' id='quatturodecillion'>1 Quattuordecillion</input>
-                <input class='rad' type='radio' name='q4row4'id='10^300'>10^300 </input>
-            </span>
-        </div>
-        <div class="q5" id="row5">
-            <div class="question5">
-                <p>5. Which of these shapes has the most sides?</p>
-            </div>
-            <span>
-                <input class='rad' type='radio' name='q5row5' id='dodecahedron'>Dodecahedron</input>
-                <input class='rad' type='radio' name='q5row5' id='rhombus'>Rhombus</input>
-                <input class='rad' type='radio' name='q5row5' id='triangle'>triangle</input>
-                <input class='correct' type='radio' name='q5row5' id='circle'>Circle</input>
-            </span>
-        </div>
-    </div>
-    <div class="footer"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./assets/javascript/app.js"></script>
 </body>

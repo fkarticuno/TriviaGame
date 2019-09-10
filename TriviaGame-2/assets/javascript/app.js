@@ -62,6 +62,7 @@ var intervalId = setInterval(timeUpdate, 1000)
 function timeUpdate() {
     (count<=0 ? endGame() : count--);
     m = $('.timer').text(timeConverter(count));
+    timebar();
     return m;
 }
 
@@ -84,4 +85,10 @@ function timeConverter(t) {
       minutes = "0" + minutes;
     }
     return minutes + ":" + seconds;
+  }
+
+  var timeWidth = 0;
+  function timebar() {
+      timeWidth = ((count / 120)*100)+'%';
+      $('.timebar').css('width', timeWidth)
   }
