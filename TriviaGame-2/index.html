@@ -7,12 +7,189 @@
     <title>Advanced Trivia Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
+
+    <style>
+    input {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    p {
+        font-size: 25px;
+        color:rgba(46, 36, 36, 0.966)
+    }
+    img {
+        height: 200px;
+        width: 200px;
+    }
+    .q1,.q2,.q3,.q4,.q5 {
+        padding: 10px;
+    }
+    .header,.footer {
+        height: 50px;
+        width: 100%;
+        background-color: grey;
+    }
+    .main {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: lightgray;
+    }
+    .leftsidebar {
+        float: left;
+        width: 50px;
+        background-color: grey;
+        height: 500px;
+    }
+    .rightsidebar {
+        float: right;
+        width: 50px;
+        background-color: grey;
+        height: 500px;
+    }
+    .gifs {
+        float: left;
+        width: 200px;
+        height: 500px;
+    }
+    .blank {
+        float: right;
+        width: 200px;
+        height: 500px;
+    }
+    .gameover {
+        height: 150px;
+        width: 190px;
+    }
+    </style>
 </head>
 <body>
-    
-
-<script> src-"./assets/javascript/app.js"</script>
+    <div class="header">&nbsp;</div>
+    <div class="leftsidebar">&nbsp;</div>
+    <div class="gifs">&nbsp;</div>
+    <div class="rightsidebar">&nbsp;</div>
+    <div class="blank">
+        &nbsp;
+        <h3>
+            Answer the questions within the time limit and click:
+        </h3>
+        <input type="submit" class='finishbttn'></input>
+    </div>
+    <div class="main" id="cont">
+        <div class="q1" id="row1">
+            <div class="question1">
+               <p>1. Which of these has the least amount of toes?</p>
+            </div>
+            <span>
+                <input class='rad' type='radio' name='q1row1' id='lions'>Lions</input>
+                <input class='correct' type='radio' name='q1row1' id='tiger'>Tigers</input>
+                <input class='rad' type='radio' name='q1row1' id='bear'>Bears</input>
+                <input class='rad' type='radio' name='q1row1' id='oh my'>Oh My</input>
+            </span>
+        </div>
+        <div class="q2" id="row2">
+            <div class="question2">
+                <p>2. Which of these is a berry?</p>
+            </div>
+            <span>
+                <input class='rad' type='radio' name='q2row2' id='strawberries'>Strawberry</input>
+                <input class='correct' type='radio' name='q2row2' id='banana-getting-ready'>Banana</input>
+                <input class='rad' type='radio' name='q2row2' id='blackberries'>Blackberry</input>
+                <input class='rad' type='radio' name='q2row2' id='ampersand'>Ampersand</input>
+            </span>  
+        </div>
+        <div class="q3" id="row3">
+            <div class="question3">
+                <p>3. Which of these is the name of a Russian Jet?</p>
+            </div>
+            <span>
+                <input class='correct' type='radio' name='q3row3' id='mig29-climb'>Fulcrum</input>
+                <input class='rad' type='radio' name='q3row3' id='starfighter'>Starfighter</input>
+                <input class='rad' type='radio' name='q3row3' id='shenyang-jet'>J31</input>
+                <input class='rad' type='radio' name='q3row3'id='panavia'>Tornado</input>
+            </span>
+        </div>
+        <div class="q4" id="row4">
+            <div class="question4">
+                <p>4. Which of these numbers is the largest?</p>
+            </div>
+            <span>
+                <input class='rad' type='radio' name='q4row4' id='millionare'>1 Million</input>
+                <input class='correct' type='radio' name='q4row4' id='centillion'>1 Centillion</input>
+                <input class='rad' type='radio' name='q4row4' id='quatturodecillion'>1 Quattuordecillion</input>
+                <input class='rad' type='radio' name='q4row4'id='10^300'>10^300 </input>
+            </span>
+        </div>
+        <div class="q5" id="row5">
+            <div class="question5">
+                <p>5. Which of these shapes has the most sides?</p>
+            </div>
+            <span>
+                <input class='rad' type='radio' name='q5row5' id='dodecahedron'>Dodecahedron</input>
+                <input class='rad' type='radio' name='q5row5' id='rhombus'>Rhombus</input>
+                <input class='rad' type='radio' name='q5row5' id='triangle'>triangle</input>
+                <input class='correct' type='radio' name='q5row5' id='circle'>Circle</input>
+            </span>
+        </div>
+    </div>
+    <div class="footer"></div>
+<script> src="./assets/javascript/app.js"</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+        var score = 0;
+        var wasClicked = 0;
+        var gifId = 0;
+        // Waits for <input> to be clicked, saves object as wasClicked to be checked by updateScore()
+        $('.main > div > span > input').click(function() {
+        console.log($(this).attr('id'));
+        wasClicked = $(this);
+        gifId = wasClicked.attr('id');
+        console.log(gifId);
+        updateScore();
+        });
+        
+        /*
+            http://html-tuts.com/jquery-this-selector/
+            $('.sampleList > li > a').click(function() {
+            $(this).parent().toggleClass('sampleClass');
+            return false;
+            });
+        */
+        $('.finishbttn').on('click',function(){
+            $('.blank').empty();
+            var end = '<hr><p>You got ' + score + ' out of 5 questions right!</p><img class="gameover" src="https://media.giphy.com/media/fxnF2NswlLlxvwGYEn/giphy.gif"/>'
+            $('.blank').append(end);
+        })
+        // Updates score when opiton button clicked
+        // Should hold total score and change based on how many class='correct' are selected
+        function updateScore() {
+            //(wasClicked.hasClass('correct') ? console.log('Selected Correct Answer') : console.log('Selected Incorrect Answer'))
+            (wasClicked.hasClass('correct') && !wasClicked.hasClass('selected') ? score++ : score=score);
+            wasClicked.attr('class','selected');
+            console.log(score);
+            callGiphy();
+            //  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+            //  (isMember ? "$2.00" : "$10.00")
+        }
+
+        // GIPHY integration
+        function callGiphy() {
+            var APIKey = "OrGsAQPACjDG7CuKA31b1bSM9ZqDShC3";
+            // Here we are building the URL we need to query the database
+            var queryURL = "http://api.giphy.com/v1/gifs/search?q="+gifId+"&api_key="+APIKey+"&limit=1";
+            
+            $.ajax({
+            url: queryURL,
+            method: "GET"
+            }).then(function(response) {
+            console.log(response);
+            console.log(response.data[0].embed_url);
+            var ima = response.data[0].images.fixed_height.url;
+            $('.gifs').html('<img src='+ima+'/>');
+            });
+        }
+    </script>
 </body>
 </html>
 
