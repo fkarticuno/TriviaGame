@@ -43,7 +43,7 @@ function updateScore() {
 function callGiphy() {
     var APIKey = "OrGsAQPACjDG7CuKA31b1bSM9ZqDShC3";
     // Here we are building the URL we need to query the database
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q="+gifId+"&api_key="+APIKey+"&limit=1";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q="+gifId+"&api_key="+APIKey+"&limit=1";
     
     $.ajax({
     url: queryURL,
